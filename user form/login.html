@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="content">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="passwordToggle"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" id="signupButton">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+<script>
+    const passwordInput = document.getElementById('exampleInputPassword1');
+    const passwordToggle = document.getElementById('passwordToggle');
+
+    passwordToggle.addEventListener('click',
+    function () {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordToggle.innerHTML = '<i class="fa fa-eye-slash" aria-hidden="true"></i>';
+        } else {
+            passwordInput.type = 'password';
+            passwordToggle.innerHTML = '<i class="fa fa-eye" aria-hidden="true"></i>';
+        }
+    });
+
+    const signupButton = document.getElementById('signupButton');
+
+    signupButton.addEventListener('click',
+    function () {
+        window.location.href = 'signup.html';
+    });
+</script>
+</html>
